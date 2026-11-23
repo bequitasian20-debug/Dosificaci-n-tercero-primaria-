@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colegio Montano Cortijo - Dosificación de Contenidos de Danza y Teatro</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            montano: {
+              navy: '#15368A',
+              darkNavy: '#0F2766',
+              mediumBlue: '#3B66B3',
+              hoverBlue: '#2F5599',
+              gold: '#FACC15',
+              goldHover: '#EAB308',
+              bg: '#F1F5F9',
+              text: '#334155',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F1F5F9;
+      color: #334155;
+    }
+
+    /* Tarjeta institucional exacta a la imagen de referencia */
+    .montano-card {
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      border-left: 6px solid #15368A;
+      box-shadow: 0 4px 14px rgba(15, 39, 102, 0.08);
+    }
+
+    /* Subtarjeta interna */
+    .montano-subcard {
+      background-color: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-left: 4px solid #3B66B3;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .montano-subcard:hover {
+      background-color: #FFFFFF;
+      border-left-color: #FACC15;
+      box-shadow: 0 4px 10px rgba(21, 54, 138, 0.08);
+      transform: translateY(-1px);
+    }
+
+    /* Estilo de pestañas exacto a la referencia */
+    .tab-btn {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      font-weight: 700;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+    }
+
+    .tab-active {
+      background-color: #FACC15;
+      color: #15368A;
+      border-bottom: 4px solid #15368A;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-inactive {
+      background-color: #3B66B3;
+      color: #FFFFFF;
+      border-bottom: 4px solid transparent;
+    }
+
+    .tab-inactive:hover {
+      background-color: #2F5599;
+    }
+
+    /* Estilos de impresión limpios */
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .montano-card {
+        box-shadow: none !important;
+        border: 1px solid #CBD5E1;
+        border-left: 6px solid #15368A !important;
+        break-inside: avoid;
+      }
+      header {
+        background-color: #15368A !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- ENCABEZADO INSTITUCIONAL SUPERIOR -->
+  <header class="bg-[#15368A] text-white shadow-md sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col lg:flex-row items-center justify-between gap-3">
+      
+      <!-- Izquierda: Escudo Oficial y Nombre del Colegio -->
+      <div class="flex items-center gap-3.5 w-full lg:w-auto justify-center lg:justify-start">
+        <!-- Escudo Oficial Colegio Montano Cortijo (SVG Nítido y Proporcionado) -->
+        <div class="flex-shrink-0 bg-white rounded-xl px-2 py-1.5 shadow-md border border-white/90 flex items-center justify-center" style="width: 72px; height: 82px;">
+          <svg viewBox="0 0 240 276" class="w-full h-full overflow-visible" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Escudo Oficial Colegio Montano Cortijo">
+            <defs>
+              <!-- Degradado azul exterior del escudo -->
+              <linearGradient id="cmcOuterBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0284C7"/>
+                <stop offset="50%" stop-color="#0A4D9C"/>
+                <stop offset="100%" stop-color="#1E40AF"/>
+              </linearGradient>
+              <!-- Degradado dorado/amarillo brillante interior -->
+              <linearGradient id="cmcGoldFill" x1="20%" y1="5%" x2="80%" y2="95%">
+                <stop offset="0%" stop-color="#FEF08A"/>
+                <stop offset="35%" stop-color="#FACC15"/>
+                <stop offset="80%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#D97706"/>
+              </linearGradient>
+              <!-- Degradado cinta azul marino -->
+              <linearGradient id="cmcRibbonBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#07255A"/>
+                <stop offset="28%" stop-color="#0B3B82"/>
+                <stop offset="50%" stop-color="#10408A"/>
+                <stop offset="72%" stop-color="#0B3B82"/>
+                <stop offset="100%" stop-color="#07255A"/>
+              </linearGradient>
+              <!-- Sombra nítida -->
+              <filter id="cmcShadow" x="-12%" y="-12%" width="124%" height="124%">
+                <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#07255A" flood-opacity="0.28"/>
+              </filter>
+              <!-- Ruta curva para el lema dentro de la cinta -->
+              <path id="cmcRibbonCurve" d="M 30,174 Q 120,204 210,174"/>
+            </defs>
+
+            <!-- 1. Contorno exterior azul del escudo heráldico -->
+            <path d="M 32,18 Q 120,34 208,18 L 208,120 C 208,176 158,208 120,222 C 82,208 32,176 32,120 Z"
+                  fill="url(#cmcOuterBlue)" filter="url(#cmcShadow)"/>
+
+            <!-- 2. Marco interior blanco limpio -->
+            <path d="M 40,27 Q 120,42 200,27 L 200,119 C 200,169 154,199 120,212 C 86,199 40,169 40,119 Z"
+                  fill="#FFFFFF"/>
+
+            <!-- 3. Filete fino dorado oscuro -->
+            <path d="M 46,34 Q 120,48 194,34 L 194,118 C 194,163 151,191 120,203 C 89,191 46,163 46,118 Z"
+                  fill="#B45309"/>
+
+            <!-- 4. Relleno dorado/amarillo brillante -->
+            <path d="M 49,37 Q 120,50 191,37 L 191,117 C 191,160 150,187 120,199 C 90,187 49,160 49,117 Z"
+                  fill="url(#cmcGoldFill)"/>
+
+            <!-- 5. Brillo superior suave -->
+            <path d="M 52,40 Q 120,52 188,40 L 188,88 Q 120,104 52,88 Z"
+                  fill="#FEF9C3" opacity="0.45"/>
+
+            <!-- 6. Letras universitarias "CM" dibujadas con trazos geométricos limpios y doble contorno -->
+            <g filter="url(#cmcShadow)" transform="translate(0, 2) rotate(-2.5 120 112)">
+              <!-- Capa 1: Contorno exterior azul institucional grueso -->
+              <g fill="#0A4D9C" stroke="#0A4D9C" stroke-width="11" stroke-linejoin="miter" stroke-miterlimit="3">
+                <!-- Letra C -->
+                <path d="M 111,88 L 111,72 L 99,64 L 68,64 L 56,74 L 56,130 L 68,140 L 99,140 L 111,132 L 111,116 L 93,116 L 93,124 L 74,124 L 74,80 L 93,80 L 93,88 Z"/>
+                <!-- Letra M -->
+                <path d="M 121,140 L 121,64 L 139,64 L 154,96 L 169,64 L 187,64 L 187,140 L 169,140 L 169,95 L 154,124 L 139,95 L 139,140 Z"/>
+              </g>
+              <!-- Capa 2: Contorno intermedio blanco nítido -->
+              <g fill="#FFFFFF" stroke="#FFFFFF" stroke-width="5.5" stroke-linejoin="miter" stroke-miterlimit="3">
+                <path d="M 111,88 L 111,72 L 99,64 L 68,64 L 56,74 L 56,130 L 68,140 L 99,140 L 111,132 L 111,116 L 93,116 L 93,124 L 74,124 L 74,80 L 93,80 L 93,88 Z"/>
+                <path d="M 121,140 L 121,64 L 139,64 L 154,96 L 169,64 L 187,64 L 187,140 L 169,140 L 169,95 L 154,124 L 139,95 L 139,140 Z"/>
+              </g>
+              <!-- Capa 3: Relleno principal azul institucional -->
+              <g fill="#0A4D9C">
+                <path d="M 111,88 L 111,72 L 99,64 L 68,64 L 56,74 L 56,130 L 68,140 L 99,140 L 111,132 L 111,116 L 93,116 L 93,124 L 74,124 L 74,80 L 93,80 L 93,88 Z"/>
+                <path d="M 121,140 L 121,64 L 139,64 L 154,96 L 169,64 L 187,64 L 187,140 L 169,140 L 169,95 L 154,124 L 139,95 L 139,140 Z"/>
+              </g>
+            </g>
+
+            <!-- 7. Cinta curva azul marino cruzando la base del escudo -->
+            <g filter="url(#cmcShadow)">
+              <!-- Dobleces laterales traseros -->
+              <polygon points="18,148 44,158 38,180 15,168" fill="#051B42"/>
+              <polygon points="222,148 196,158 202,180 225,168" fill="#051B42"/>
+              <!-- Banda frontal curva -->
+              <path d="M 18,148 Q 120,185 222,148 L 217,179 Q 120,216 23,179 Z"
+                    fill="url(#cmcRibbonBlue)" stroke="#FFFFFF" stroke-width="1.4"/>
+              <!-- Lema institucional en blanco -->
+              <text fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="8.6" letter-spacing="0.45">
+                <textPath href="#cmcRibbonCurve" startOffset="50%" text-anchor="middle">EXCELENCIA HUMANA, ACADÉMICA Y FÍSICA</textPath>
+              </text>
+            </g>
+
+            <!-- 8. Cinco estrellas azules bien alineadas debajo de la punta -->
+            <g fill="#0A4D9C">
+              <polygon points="62,230 64.4,235.5 70.4,236 65.8,239.9 67.2,245.7 62,242.6 56.8,245.7 58.2,239.9 53.6,236 59.6,235.5"/>
+              <polygon points="91,230 93.4,235.5 99.4,236 94.8,239.9 96.2,245.7 91,242.6 85.8,245.7 87.2,239.9 82.6,236 88.6,235.5"/>
+              <polygon points="120,230 122.4,235.5 128.4,236 123.8,239.9 125.2,245.7 120,242.6 114.8,245.7 116.2,239.9 111.6,236 117.6,235.5"/>
+              <polygon points="149,230 151.4,235.5 157.4,236 152.8,239.9 154.2,245.7 149,242.6 143.8,245.7 145.2,239.9 140.6,236 146.6,235.5"/>
+              <polygon points="178,230 180.4,235.5 186.4,236 181.8,239.9 183.2,245.7 178,242.6 172.8,245.7 174.2,239.9 169.6,236 175.6,235.5"/>
+            </g>
+
+            <!-- 9. Palabra "CORTIJO" en tipografía gruesa universitaria -->
+            <text x="120" y="271" text-anchor="middle" fill="#0A4D9C"
+                  font-family="'Arial Black', Impact, sans-serif" font-weight="900" font-size="27" letter-spacing="2.8">
+              CORTIJO
+            </text>
+          </svg>
+        </div>
+        <div class="text-center lg:text-left">
+          <h1 class="text-lg sm:text-xl font-extrabold tracking-tight leading-tight uppercase text-white">
+            COLEGIO MONTANO CORTIJO
+          </h1>
+          <p class="text-xs sm:text-sm font-semibold italic text-[#FACC15]">
+            Dosificación de Contenidos de Danza y Teatro
+          </p>
+        </div>
+      </div>
+
+      <!-- Centro: Caja de Metadatos del Curso -->
+      <div class="bg-[#0F2766]/80 border border-white/15 rounded-lg px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs sm:text-sm shadow-inner w-full lg:w-auto">
+        <div>
+          <span class="text-[#FACC15] font-bold italic">Curso:</span>
+          <span class="text-white font-medium ml-1">Expresión Artística (Teatro y Danza)</span>
+        </div>
+        <span class="hidden sm:inline text-white/30">|</span>
+        <div>
+          <span class="text-[#FACC15] font-bold italic">Grado:</span>
+          <span class="text-white font-medium ml-1">Tercero Primaria</span>
+        </div>
+        <span class="hidden sm:inline text-white/30">|</span>
+        <div>
+          <span class="text-[#FACC15] font-bold italic">Docente:</span>
+          <span class="text-white font-medium ml-1">Miss Rebeca Sian</span>
+        </div>
+        <span class="hidden sm:inline text-white/30">|</span>
+        <div>
+          <span class="text-[#FACC15] font-bold italic">Ciclo Escolar:</span>
+          <span class="text-white font-medium ml-1">2027</span>
+        </div>
+      </div>
+
+      <!-- Derecha: Botón Pantalla Completa -->
+      <div class="no-print flex-shrink-0">
+        <button id="fullscreenBtn" onclick="toggleFullScreen()" class="bg-[#FACC15] hover:bg-[#EAB308] text-[#15368A] font-bold italic text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow transition flex items-center gap-2 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span id="fullscreenText">Pantalla Completa</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- BARRA DE NAVEGACIÓN POR PESTAÑAS Y FILTROS -->
+  <div class="bg-[#E2E8F0]/70 border-b border-slate-300 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-3 pb-2 flex flex-col md:flex-row md:items-center justify-between gap-3">
+      
+      <!-- Pestañas Principales -->
+      <nav class="flex flex-wrap gap-2" aria-label="Navegación de Áreas">
+        <button id="tab-danza" onclick="switchTab('danza')" class="tab-btn tab-active px-5 py-2.5 text-xs sm:text-sm cursor-pointer">
+          DANZA
+        </button>
+        <button id="tab-teatro" onclick="switchTab('teatro')" class="tab-btn tab-inactive px-5 py-2.5 text-xs sm:text-sm cursor-pointer">
+          TEATRO
+        </button>
+        <button id="tab-evaluacion" onclick="switchTab('evaluacion')" class="tab-btn tab-inactive px-5 py-2.5 text-xs sm:text-sm cursor-pointer">
+          EVALUACIÓN
+        </button>
+        <button id="tab-comparativa" onclick="switchTab('comparativa')" class="tab-btn tab-inactive px-5 py-2.5 text-xs sm:text-sm cursor-pointer">
+          VISTA COMPLETA / IMPRIMIR
+        </button>
+      </nav>
+
+      <!-- Buscador y Filtro de Fase -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="relative flex-grow sm:flex-grow-0">
+          <input 
+            type="text" 
+            id="searchInput" 
+            oninput="applyFilters()" 
+            placeholder="Buscar clase o tema..." 
+            class="w-full sm:w-56 pl-8 pr-3 py-1.5 text-xs sm:text-sm bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#15368A] text-slate-700"
+          />
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 absolute left-2.5 top-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+
+        <select id="phaseFilter" onchange="applyFilters()" class="py-1.5 px-2.5 text-xs sm:text-sm bg-white border border-slate-300 rounded-lg font-medium text-[#15368A] focus:outline-none focus:ring-2 focus:ring-[#15368A] cursor-pointer">
+          <option value="all">Todas las clases (1-14)</option>
+          <option value="desarrollo">Desarrollo Temático (1-7)</option>
+          <option value="ensayo">Fase de Ensayos (8-14)</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+    <!-- ==================== VISTA 1: UNIDAD DE DANZA ==================== -->
+    <section id="view-danza" class="space-y-6">
+      <div class="montano-card p-5 sm:p-8">
+        <!-- Encabezado de Tarjeta -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-4 border-b border-slate-200 mb-6">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-extrabold italic uppercase text-[#15368A] tracking-tight">
+              DANZA
+            </h2>
+            <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">
+              Área: <span class="text-[#15368A]">Expresión Artística</span> &nbsp;·&nbsp; Grado: <span class="text-[#15368A]">Tercero Primaria</span> &nbsp;·&nbsp; Total: <span class="text-[#15368A]">14 Clases</span>
+            </p>
+          </div>
+          <!-- Píldoras de Filtro Rápido -->
+          <div class="flex flex-wrap items-center gap-1.5 text-xs font-bold">
+            <button type="button" onclick="setQuickPhase('all')" id="pill-danza-all" class="px-3 py-1.5 rounded-lg bg-[#15368A] text-[#FACC15] shadow-sm transition cursor-pointer">
+              Todas (14)
+            </button>
+            <button type="button" onclick="setQuickPhase('desarrollo')" id="pill-danza-desarrollo" class="px-3 py-1.5 rounded-lg bg-blue-50 text-[#15368A] border border-blue-200 hover:bg-blue-100 transition cursor-pointer">
+              Desarrollo (1–7)
+            </button>
+            <button type="button" onclick="setQuickPhase('ensayo')" id="pill-danza-ensayo" class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-900 border border-amber-300 hover:bg-amber-100 transition cursor-pointer">
+              Ensayos (8–14)
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabla Curricular de 4 Columnas de Danza -->
+        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#15368A] text-white text-xs sm:text-sm uppercase italic">
+                <th class="py-3.5 px-3 font-extrabold w-24 text-center border-r border-white/15">Clase</th>
+                <th class="py-3.5 px-4 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Competencia</th>
+                <th class="py-3.5 px-4 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Indicador de logro</th>
+                <th class="py-3.5 px-4 font-extrabold text-white">Contenido / Actividad</th>
+              </tr>
+            </thead>
+            <tbody id="danza-tbody" class="divide-y divide-slate-200 text-xs sm:text-sm"></tbody>
+          </table>
+        </div>
+
+        <!-- Nota Institucional al pie -->
+        <div class="mt-6 bg-amber-50/90 border-l-4 border-[#FACC15] border border-amber-200 rounded-lg p-4 flex items-start gap-3">
+          <div class="bg-[#15368A] text-[#FACC15] rounded-full p-1.5 flex-shrink-0 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            <strong class="text-[#15368A] italic uppercase">Nota:</strong> La presentación final se realizará en una fecha posterior y no está incluida dentro de las 14 clases.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA 2: UNIDAD DE TEATRO ==================== -->
+    <section id="view-teatro" class="space-y-6 hidden">
+      <div class="montano-card p-5 sm:p-8">
+        <!-- Encabezado de Tarjeta -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-4 border-b border-slate-200 mb-6">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-extrabold italic uppercase text-[#15368A] tracking-tight">
+              TEATRO
+            </h2>
+            <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">
+              Área: <span class="text-[#15368A]">Expresión Artística</span> &nbsp;·&nbsp; Grado: <span class="text-[#15368A]">Tercero Primaria</span> &nbsp;·&nbsp; Total: <span class="text-[#15368A]">14 Clases</span>
+            </p>
+          </div>
+          <!-- Píldoras de Filtro Rápido -->
+          <div class="flex flex-wrap items-center gap-1.5 text-xs font-bold">
+            <button type="button" onclick="setQuickPhase('all')" id="pill-teatro-all" class="px-3 py-1.5 rounded-lg bg-[#15368A] text-[#FACC15] shadow-sm transition cursor-pointer">
+              Todas (14)
+            </button>
+            <button type="button" onclick="setQuickPhase('desarrollo')" id="pill-teatro-desarrollo" class="px-3 py-1.5 rounded-lg bg-blue-50 text-[#15368A] border border-blue-200 hover:bg-blue-100 transition cursor-pointer">
+              Desarrollo (1–7)
+            </button>
+            <button type="button" onclick="setQuickPhase('ensayo')" id="pill-teatro-ensayo" class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-900 border border-amber-300 hover:bg-amber-100 transition cursor-pointer">
+              Ensayos (8–14)
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabla Curricular de 4 Columnas de Teatro -->
+        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#15368A] text-white text-xs sm:text-sm uppercase italic">
+                <th class="py-3.5 px-3 font-extrabold w-24 text-center border-r border-white/15">Clase</th>
+                <th class="py-3.5 px-4 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Competencia</th>
+                <th class="py-3.5 px-4 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Indicador de logro</th>
+                <th class="py-3.5 px-4 font-extrabold text-white">Contenido / Actividad</th>
+              </tr>
+            </thead>
+            <tbody id="teatro-tbody" class="divide-y divide-slate-200 text-xs sm:text-sm"></tbody>
+          </table>
+        </div>
+
+        <!-- Nota Institucional al pie -->
+        <div class="mt-6 bg-amber-50/90 border-l-4 border-[#FACC15] border border-amber-200 rounded-lg p-4 flex items-start gap-3">
+          <div class="bg-[#15368A] text-[#FACC15] rounded-full p-1.5 flex-shrink-0 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            <strong class="text-[#15368A] italic uppercase">Nota:</strong> La presentación final se realizará en una fecha posterior y no está incluida dentro de las 14 clases.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA 3: ORGANIZACIÓN DE LA EVALUACIÓN ==================== -->
+    <section id="view-evaluacion" class="space-y-6 hidden">
+      <div class="montano-card p-5 sm:p-8">
+        <!-- Encabezado de Tarjeta -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-200 mb-6">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-extrabold italic uppercase text-[#15368A] tracking-tight">
+              ORGANIZACIÓN DE LA EVALUACIÓN
+            </h2>
+            <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">
+              Área: <span class="text-[#15368A]">Expresión Artística (Danza y Teatro)</span> &nbsp;|&nbsp; Grado: <span class="text-[#15368A]">Tercero Primaria</span>
+            </p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#15368A] text-[#FACC15] text-xs font-extrabold italic uppercase shadow-sm self-start sm:self-auto">
+            <span>Total por Unidad: 100 Puntos</span>
+          </div>
+        </div>
+
+        <!-- Destacado Principal: Cuatro Proyectos Asignados por Clase -->
+        <div class="bg-blue-50/90 border-l-4 border-[#15368A] border border-blue-200 rounded-xl p-4 sm:p-5 mb-6 flex items-start gap-3.5">
+          <div class="bg-[#15368A] text-[#FACC15] rounded-lg p-2 flex-shrink-0 mt-0.5 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-extrabold italic uppercase text-[#15368A]">
+              Asignación General por Clase / Disciplina
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-700 mt-1 leading-relaxed">
+              Cada clase contará con un total de <strong class="text-[#15368A] font-bold">cuatro proyectos asignados</strong> durante la unidad (tanto en Danza como en Teatro).
+            </p>
+          </div>
+        </div>
+
+        <!-- Descripción Oficial Exacta -->
+        <div class="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed mb-7">
+          <p class="font-medium text-slate-800">
+            Los contenidos de cada unidad se distribuyen en cuatro proyectos de evaluación. Cada proyecto tiene un valor de 25 puntos; por lo tanto, cada unidad suma 100 puntos.
+          </p>
+          <ul class="space-y-2 pl-1">
+            <li class="flex items-start gap-2.5 text-sm sm:text-base text-slate-800">
+              <span class="w-2 h-2 rounded-full bg-[#15368A] mt-2 flex-shrink-0"></span>
+              <span>Cada proyecto evalúa únicamente los temas asignados a su unidad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Representación Visual: 4 Proyectos de 25 pts = 100 pts -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="montano-subcard p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 1</span>
+                <span class="px-2.5 py-0.5 rounded-md bg-[#15368A] text-[#FACC15] text-xs font-extrabold italic">25 pts</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15368A] mb-1.5">Aplicación Práctica</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Demostración y ejecución individual o grupal en clase de los conceptos, técnicas y habilidades aprendidas, evaluada mediante rúbrica.
+            </p>
+          </div>
+
+          <div class="montano-subcard p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 2</span>
+                <span class="px-2.5 py-0.5 rounded-md bg-[#15368A] text-[#FACC15] text-xs font-extrabold italic">25 pts</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15368A] mb-1.5">Portafolio</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Recopilación física y ordenada de las evidencias trabajadas en clase (hojas de trabajo, lecturas, libretos y materiales manuales).
+            </p>
+          </div>
+
+          <div class="montano-subcard p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 3</span>
+                <span class="px-2.5 py-0.5 rounded-md bg-[#15368A] text-[#FACC15] text-xs font-extrabold italic">25 pts</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15368A] mb-1.5">Ensayos</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Evaluación continua del proceso de montaje, disciplina, coordinación y avance progresivo durante las sesiones de ensayo.
+            </p>
+          </div>
+
+          <div class="montano-subcard p-4 flex flex-col justify-between border-l-[#FACC15]">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 4</span>
+                <span class="px-2.5 py-0.5 rounded-md bg-[#FACC15] text-[#15368A] text-xs font-extrabold italic">25 pts</span>
+              </div>
+              <h4 class="text-sm font-bold text-[#15368A] mb-1.5">Presentación Final</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Ejecución artística y puesta en escena final de la coreografía o dramatización ante público o evaluación de cierre.
+            </p>
+          </div>
+        </div>
+
+        <!-- Barra Resumen de Punteo Total -->
+        <div class="bg-[#15368A] text-white rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
+          <div class="flex items-center gap-2.5 text-xs sm:text-sm font-bold italic uppercase">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#FACC15]"></span>
+            <span>4 Proyectos Asignados × 25 Puntos c/u</span>
+          </div>
+          <div class="bg-[#FACC15] text-[#15368A] px-4 py-1.5 rounded-lg font-extrabold italic uppercase text-xs sm:text-sm shadow-inner">
+            Total por Unidad = 100 Puntos
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA 4: VISTA COMPARATIVA E IMPRESIÓN ==================== -->
+    <section id="view-comparativa" class="space-y-6 hidden">
+      <div class="montano-card p-5 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 mb-6">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-extrabold italic uppercase text-[#15368A] tracking-tight">
+              VISTA COMPLETA — TERCERO PRIMARIA
+            </h2>
+            <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">
+              Dosificación integral de Danza y Teatro (14 clases por disciplina)
+            </p>
+          </div>
+          <button onclick="window.print()" class="no-print bg-[#15368A] hover:bg-[#0F2766] text-white font-bold italic text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow transition flex items-center gap-2 self-start sm:self-auto cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Imprimir / Guardar PDF
+          </button>
+        </div>
+
+        <!-- Bloque 1 en Vista Completa: Tabla Curricular de 4 Columnas de Danza -->
+        <div class="mb-8">
+          <h3 class="text-base sm:text-lg font-extrabold italic uppercase text-[#15368A] mb-3 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#FACC15] border border-[#15368A]"></span>
+            1. DANZA — TERCERO PRIMARIA (COMPETENCIAS E INDICADORES)
+          </h3>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#15368A] text-white text-xs uppercase italic">
+                  <th class="py-3 px-3 font-extrabold w-20 text-center border-r border-white/15">Clase</th>
+                  <th class="py-3 px-3 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Competencia</th>
+                  <th class="py-3 px-3 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Indicador de logro</th>
+                  <th class="py-3 px-3 font-extrabold text-white">Contenido / Actividad</th>
+                </tr>
+              </thead>
+              <tbody id="comparativa-danza-tbody" class="divide-y divide-slate-200 text-xs"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bloque 2 en Vista Completa: Tabla Curricular de 4 Columnas de Teatro -->
+        <div class="mb-6">
+          <h3 class="text-base sm:text-lg font-extrabold italic uppercase text-[#15368A] mb-3 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#3B66B3]"></span>
+            2. TEATRO — TERCERO PRIMARIA (COMPETENCIAS E INDICADORES)
+          </h3>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#15368A] text-white text-xs uppercase italic">
+                  <th class="py-3 px-3 font-extrabold w-20 text-center border-r border-white/15">Clase</th>
+                  <th class="py-3 px-3 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Competencia</th>
+                  <th class="py-3 px-3 font-extrabold w-[26%] border-r border-white/15 text-[#FACC15]">Indicador de logro</th>
+                  <th class="py-3 px-3 font-extrabold text-white">Contenido / Actividad</th>
+                </tr>
+              </thead>
+              <tbody id="comparativa-teatro-tbody" class="divide-y divide-slate-200 text-xs"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bloque de Organización de la Evaluación en Vista Completa / Impresión -->
+        <div class="mt-6 bg-slate-50 border border-slate-200 border-l-4 border-l-[#15368A] rounded-xl p-4 sm:p-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200 mb-3">
+            <h3 class="text-sm sm:text-base font-extrabold italic uppercase text-[#15368A]">
+              ORGANIZACIÓN DE LA EVALUACIÓN (4 PROYECTOS ASIGNADOS POR CLASE)
+            </h3>
+            <span class="inline-block bg-[#15368A] text-[#FACC15] text-xs font-extrabold italic uppercase px-2.5 py-1 rounded self-start sm:self-auto">
+              Total: 100 Puntos por Unidad
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed mb-2">
+            Cada clase contará con un total de <strong>cuatro proyectos asignados</strong>. Los contenidos de cada unidad se distribuyen en cuatro proyectos de evaluación. Cada proyecto tiene un valor de 25 puntos; por lo tanto, cada unidad suma 100 puntos.
+          </p>
+          <ul class="text-xs sm:text-sm text-slate-800 mb-4 pl-1">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#15368A] mt-2 flex-shrink-0"></span>
+              <span>Cada proyecto evalúa únicamente los temas asignados a su unidad.</span>
+            </li>
+          </ul>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-left">
+            <div class="bg-white border border-slate-200 border-t-4 border-t-[#3B66B3] rounded-lg p-3">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 1</span>
+                <span class="text-xs font-extrabold text-[#3B66B3]">25 pts</span>
+              </div>
+              <div class="text-xs font-bold text-[#15368A] mb-1">Aplicación Práctica</div>
+              <p class="text-[11px] text-slate-600 leading-snug">
+                Demostración y ejecución individual o grupal en clase de los conceptos, técnicas y habilidades aprendidas, evaluada mediante rúbrica.
+              </p>
+            </div>
+            <div class="bg-white border border-slate-200 border-t-4 border-t-[#3B66B3] rounded-lg p-3">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 2</span>
+                <span class="text-xs font-extrabold text-[#3B66B3]">25 pts</span>
+              </div>
+              <div class="text-xs font-bold text-[#15368A] mb-1">Portafolio</div>
+              <p class="text-[11px] text-slate-600 leading-snug">
+                Recopilación física y ordenada de las evidencias trabajadas en clase (hojas de trabajo, lecturas, libretos y materiales manuales).
+              </p>
+            </div>
+            <div class="bg-white border border-slate-200 border-t-4 border-t-[#3B66B3] rounded-lg p-3">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 3</span>
+                <span class="text-xs font-extrabold text-[#3B66B3]">25 pts</span>
+              </div>
+              <div class="text-xs font-bold text-[#15368A] mb-1">Ensayos</div>
+              <p class="text-[11px] text-slate-600 leading-snug">
+                Evaluación continua del proceso de montaje, disciplina, coordinación y avance progresivo durante las sesiones de ensayo.
+              </p>
+            </div>
+            <div class="bg-white border border-slate-200 border-t-4 border-t-[#FACC15] rounded-lg p-3">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold italic uppercase text-[#15368A]">Proyecto 4</span>
+                <span class="text-xs font-extrabold text-[#15368A]">25 pts</span>
+              </div>
+              <div class="text-xs font-bold text-[#15368A] mb-1">Presentación Final</div>
+              <p class="text-[11px] text-slate-600 leading-snug">
+                Ejecución artística y puesta en escena final de la coreografía o dramatización ante público o evaluación de cierre.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nota Institucional al pie -->
+        <div class="mt-6 bg-amber-50/90 border-l-4 border-[#FACC15] border border-amber-200 rounded-lg p-4 flex items-start gap-3">
+          <div class="bg-[#15368A] text-[#FACC15] rounded-full p-1.5 flex-shrink-0 mt-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            <strong class="text-[#15368A] italic uppercase">Nota:</strong> La presentación final se realizará en una fecha posterior y no está incluida dentro de las 14 clases.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="bg-white border-t border-slate-200 py-4 mt-8 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+      <p class="font-semibold text-[#15368A]">Colegio Montano Cortijo — Área de Expresión Artística</p>
+      <p>Dosificación Oficial • Tercero Primaria • Ciclo Escolar 2027</p>
+    </div>
+  </footer>
+
+  <!-- LÓGICA DE DATOS E INTERACTIVIDAD -->
+  <script>
+    // Competencias oficiales de Tercero Primaria - Expresión Artística
+    const COMP_DANZA_1 = "Establece relaciones entre los fenómenos artísticos en su ámbito sonoro y visual.";
+    const IND_DANZA_1 = "Participa en actividades que integran ritmo y melodía al movimiento y al desplazamiento.";
+    const IND_DANZA_2 = "Integra los distintos lenguajes artísticos al describir su entorno social y cultural.";
+
+    const COMP_TEATRO_1 = "Se involucra en actividades que fomentan creatividad utilizando recursos existentes en su comunidad.";
+    const COMP_TEATRO_2 = "Manifiesta aprecio por el arte y los artistas guatemaltecos valorando su desempeño en el tiempo y en el espacio.";
+    const IND_TEATRO_1 = "Participa en el montaje de proyectos escénicos.";
+    const IND_TEATRO_2 = "Reconoce la obra de artistas guatemaltecos.";
+    const IND_TEATRO_3 = "Identifica a los artistas guatemaltecos, los asocia con su obra y los ubica en el tiempo.";
+    const IND_TEATRO_4 = "Participa activamente en la organización de actividades para divulgar el arte de artistas guatemaltecos.";
+
+    const danzaClases = [
+      {
+        num: 1,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Movimiento y expresión musical",
+        desc: "incorporación de gestos, movimientos y desplazamientos relacionados con las ideas y elementos que sugiere la música."
+      },
+      {
+        num: 2,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_2,
+        titulo: "Expresión vocal y corporal",
+        desc: "reconocimiento de los timbres de la voz, ejercicios de potencia vocal e incorporación de movimientos creativos a recitados."
+      },
+      {
+        num: 3,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Mímica y movimiento corporal",
+        desc: "representación de ideas y situaciones mediante gestos y movimientos creativos."
+      },
+      {
+        num: 4,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Juegos musicales y desplazamientos",
+        desc: "ejecución de juegos rítmicos que combinan música, movimiento y coordinación espacial."
+      },
+      {
+        num: 5,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_2,
+        titulo: "Canciones y movimiento",
+        desc: "interpretación de canciones que favorecen la expresión corporal, el movimiento y el juego."
+      },
+      {
+        num: 6,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Ritmo y coordinación corporal",
+        desc: "ejecución de actividades rítmicas acompañadas de melodías y armonías musicales."
+      },
+      {
+        num: 7,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_2,
+        titulo: "Ritmo corporal y musical",
+        desc: "relación entre los ritmos del cuerpo, los instrumentos musicales y los textos poéticos."
+      },
+      {
+        num: 8,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Selección musical y exploración de movimientos",
+        desc: "reconocimiento de la música y definición de los movimientos que se utilizarán en el proyecto artístico."
+      },
+      {
+        num: 9,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Práctica de movimientos",
+        desc: "repetición de pasos, gestos y secuencias corporales de acuerdo con el ritmo musical."
+      },
+      {
+        num: 10,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Coordinación y desplazamientos",
+        desc: "práctica de direcciones, posiciones y movimientos individuales y grupales."
+      },
+      {
+        num: 11,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_2,
+        titulo: "Ensayo de la coreografía",
+        desc: "práctica de la secuencia de movimientos y coordinación con la música seleccionada."
+      },
+      {
+        num: 12,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Integración de la presentación",
+        desc: "coordinación de ritmo, melodía, expresión corporal y desplazamientos."
+      },
+      {
+        num: 13,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_1,
+        titulo: "Ensayo general",
+        desc: "práctica completa de la coreografía, organización de posiciones y coordinación grupal."
+      },
+      {
+        num: 14,
+        competencia: COMP_DANZA_1,
+        indicador: IND_DANZA_2,
+        titulo: "Preparación final del proyecto artístico",
+        desc: "repaso de movimientos, secuencias y organización de los últimos detalles de la presentación."
+      }
+    ];
+
+    const teatroClases = [
+      {
+        num: 1,
+        competencia: COMP_TEATRO_1,
+        indicador: IND_TEATRO_1,
+        titulo: "Montajes teatrales escolares",
+        desc: "participación en representaciones con personajes, papeles y funciones adecuados a su edad."
+      },
+      {
+        num: 2,
+        competencia: COMP_TEATRO_1,
+        indicador: IND_TEATRO_1,
+        titulo: "Expresión de vivencias cotidianas",
+        desc: "representación de situaciones de la vida diaria utilizando la voz y el movimiento corporal."
+      },
+      {
+        num: 3,
+        competencia: COMP_TEATRO_1,
+        indicador: IND_TEATRO_1,
+        titulo: "Dramatización con música",
+        desc: "representación de historias y situaciones acompañadas de un fondo musical."
+      },
+      {
+        num: 4,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_2,
+        titulo: "El artista y su obra",
+        desc: "diferenciación entre el creador y su creación, reconociendo la importancia de los artistas."
+      },
+      {
+        num: 5,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_3,
+        titulo: "Apreciación artística",
+        desc: "reconocimiento y valoración de las obras artísticas propias y de los demás."
+      },
+      {
+        num: 6,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_4,
+        titulo: "Artistas guatemaltecos y su legado",
+        desc: "identificación de artistas de la localidad y reconocimiento de sus aportes culturales."
+      },
+      {
+        num: 7,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_3,
+        titulo: "Arte guatemalteco",
+        desc: "clasificación de obras según su género (pintura, escultura, teatro y música) y época de creación."
+      },
+      {
+        num: 8,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_3,
+        titulo: "Selección del proyecto teatral",
+        desc: "elección del artista guatemalteco, su obra o manifestación cultural que se representará."
+      },
+      {
+        num: 9,
+        competencia: COMP_TEATRO_1,
+        indicador: IND_TEATRO_1,
+        titulo: "Organización de personajes y escenas",
+        desc: "distribución de papeles y preparación de las situaciones que se representarán."
+      },
+      {
+        num: 10,
+        competencia: COMP_TEATRO_1,
+        indicador: IND_TEATRO_1,
+        titulo: "Construcción de la representación",
+        desc: "práctica de escenas, diálogos y movimientos relacionados con el proyecto."
+      },
+      {
+        num: 11,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_3,
+        titulo: "Integración cultural",
+        desc: "incorporación de información sobre el artista, su obra y sus aportes en la representación."
+      },
+      {
+        num: 12,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_4,
+        titulo: "Preparación de recursos escénicos",
+        desc: "organización de vestuario, materiales, escenografía y elementos necesarios para la representación."
+      },
+      {
+        num: 13,
+        competencia: COMP_TEATRO_1,
+        indicador: IND_TEATRO_1,
+        titulo: "Ensayo general",
+        desc: "práctica completa de la representación, organización de personajes, diálogos, movimientos y recursos escénicos."
+      },
+      {
+        num: 14,
+        competencia: COMP_TEATRO_2,
+        indicador: IND_TEATRO_4,
+        titulo: "Preparación final del proyecto teatral",
+        desc: "repaso de escenas y organización de los últimos detalles de la representación."
+      }
+    ];
+
+    // Renderiza filas curriculares de 4 columnas calculando rowspan independiente para Competencia e Indicador de logro
+    function renderCurricularRows(items, compact = false) {
+      if (!items.length) return '';
+
+      const padClass = compact ? 'py-2.5 px-3' : 'py-3.5 px-4';
+
+      // Calcula tramos contiguos independientes por columna (Competencia e Indicador)
+      const compSpans = new Array(items.length).fill(0);
+      const indSpans = new Array(items.length).fill(0);
+
+      let i = 0;
+      while (i < items.length) {
+        let j = i + 1;
+        while (j < items.length && items[j].competencia === items[i].competencia) {
+          j++;
+        }
+        compSpans[i] = j - i;
+        i = j;
+      }
+
+      i = 0;
+      while (i < items.length) {
+        let j = i + 1;
+        while (j < items.length && items[j].indicador === items[i].indicador) {
+          j++;
+        }
+        indSpans[i] = j - i;
+        i = j;
+      }
+
+      let html = '';
+
+      items.forEach((item, idx) => {
+        const isEnsayo = item.num >= 8;
+        const rowBg = isEnsayo
+          ? 'bg-amber-50/45 hover:bg-amber-50/80'
+          : 'bg-white hover:bg-blue-50/40';
+        const numBadge = isEnsayo ? 'bg-[#FACC15] text-[#15368A]' : 'bg-[#15368A] text-white';
+        const phaseBadge = isEnsayo
+          ? '<span class="ml-2 inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-200 align-middle">Ensayo</span>'
+          : '<span class="ml-2 inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-100 text-[#15368A] border border-blue-200 align-middle">Desarrollo</span>';
+        const topDivider = idx > 0 && compSpans[idx] > 0 ? 'border-t-2 border-t-[#15368A]/35' : '';
+
+        html += `<tr class="${rowBg} ${topDivider} transition">`;
+
+        // Columna 1: No. de clase
+        html += `
+          <td class="${padClass} text-center font-extrabold italic border-r border-slate-200 align-middle">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-sm shadow-sm ${numBadge}">${item.num}</span>
+          </td>
+        `;
+
+        // Columna 2: Competencia (combinada verticalmente si se repite consecutivamente)
+        if (compSpans[idx] > 0) {
+          html += `
+            <td rowspan="${compSpans[idx]}" class="${padClass} border-r border-slate-200 align-top bg-blue-50/35">
+              <div class="font-semibold text-[#15368A] leading-relaxed border-l-4 border-[#15368A] pl-3 py-1 bg-white/85 rounded-r-md shadow-2xs">
+                ${item.competencia}
+              </div>
+            </td>
+          `;
+        }
+
+        // Columna 3: Indicador de logro (combinado verticalmente si se repite consecutivamente)
+        if (indSpans[idx] > 0) {
+          html += `
+            <td rowspan="${indSpans[idx]}" class="${padClass} border-r border-slate-200 align-top bg-slate-50/60">
+              <div class="font-medium text-slate-800 leading-relaxed border-l-4 border-[#3B66B3] pl-3 py-1 bg-white/85 rounded-r-md shadow-2xs">
+                ${item.indicador}
+              </div>
+            </td>
+          `;
+        }
+
+        // Columna 4: Contenido
+        html += `
+          <td class="${padClass} align-middle text-slate-700 leading-relaxed">
+            <strong class="text-[#15368A] font-bold">${item.titulo}:</strong> ${item.desc}
+            ${phaseBadge}
+          </td>
+        </tr>`;
+      });
+
+      return html;
+    }
+
+    // Sincroniza píldoras rápidas de Danza y Teatro con el selector de fase
+    function setQuickPhase(phaseVal) {
+      document.getElementById('phaseFilter').value = phaseVal;
+      updatePhasePills(phaseVal);
+      applyFilters();
+    }
+
+    function updatePhasePills(phaseVal) {
+      ['danza', 'teatro'].forEach((area) => {
+        const allBtn = document.getElementById(`pill-${area}-all`);
+        const devBtn = document.getElementById(`pill-${area}-desarrollo`);
+        const ensBtn = document.getElementById(`pill-${area}-ensayo`);
+        if (!allBtn || !devBtn || !ensBtn) return;
+
+        allBtn.className = phaseVal === 'all'
+          ? 'px-3 py-1.5 rounded-lg bg-[#15368A] text-[#FACC15] shadow-sm transition cursor-pointer'
+          : 'px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-300 hover:bg-slate-200 transition cursor-pointer';
+
+        devBtn.className = phaseVal === 'desarrollo'
+          ? 'px-3 py-1.5 rounded-lg bg-[#15368A] text-[#FACC15] shadow-sm transition cursor-pointer'
+          : 'px-3 py-1.5 rounded-lg bg-blue-50 text-[#15368A] border border-blue-200 hover:bg-blue-100 transition cursor-pointer';
+
+        ensBtn.className = phaseVal === 'ensayo'
+          ? 'px-3 py-1.5 rounded-lg bg-[#15368A] text-[#FACC15] shadow-sm transition cursor-pointer'
+          : 'px-3 py-1.5 rounded-lg bg-amber-50 text-amber-900 border border-amber-300 hover:bg-amber-100 transition cursor-pointer';
+      });
+    }
+
+    // Renderiza las listas filtradas
+    function applyFilters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const phase = document.getElementById('phaseFilter').value;
+      updatePhasePills(phase);
+
+      const filterItemFn = (item) => {
+        const matchesPhase = 
+          phase === 'all' || 
+          (phase === 'desarrollo' && item.num <= 7) || 
+          (phase === 'ensayo' && item.num >= 8);
+        
+        const fullText = `clase ${item.num} ${item.competencia} ${item.indicador} ${item.titulo} ${item.desc}`.toLowerCase();
+        const matchesQuery = !query || fullText.includes(query);
+
+        return matchesPhase && matchesQuery;
+      };
+
+      const filteredDanza = danzaClases.filter(filterItemFn);
+      const filteredTeatro = teatroClases.filter(filterItemFn);
+
+      const danzaTbody = document.getElementById('danza-tbody');
+      const teatroTbody = document.getElementById('teatro-tbody');
+      const compDanzaTbody = document.getElementById('comparativa-danza-tbody');
+      const compTeatroTbody = document.getElementById('comparativa-teatro-tbody');
+
+      // Render Danza (4 columnas con celdas combinadas verticalmente)
+      danzaTbody.innerHTML = filteredDanza.length 
+        ? renderCurricularRows(filteredDanza, false)
+        : `<tr><td colspan="4" class="text-center py-8 text-slate-500 italic">No se encontraron clases de Danza con los criterios seleccionados.</td></tr>`;
+
+      // Render Teatro (4 columnas con celdas combinadas verticalmente)
+      teatroTbody.innerHTML = filteredTeatro.length 
+        ? renderCurricularRows(filteredTeatro, false)
+        : `<tr><td colspan="4" class="text-center py-8 text-slate-500 italic">No se encontraron clases de Teatro con los criterios seleccionados.</td></tr>`;
+
+      // Render Vista Completa / Impresión
+      compDanzaTbody.innerHTML = filteredDanza.length
+        ? renderCurricularRows(filteredDanza, true)
+        : `<tr><td colspan="4" class="text-center py-6 text-slate-500 italic">Sin registros de Danza para el filtro actual.</td></tr>`;
+
+      compTeatroTbody.innerHTML = filteredTeatro.length
+        ? renderCurricularRows(filteredTeatro, true)
+        : `<tr><td colspan="4" class="text-center py-6 text-slate-500 italic">Sin registros de Teatro para el filtro actual.</td></tr>`;
+    }
+
+    // Cambio de pestañas
+    function switchTab(tabName) {
+      const views = ['danza', 'teatro', 'evaluacion', 'comparativa'];
+      views.forEach(v => {
+        const viewEl = document.getElementById(`view-${v}`);
+        const tabEl = document.getElementById(`tab-${v}`);
+        if (v === tabName) {
+          viewEl.classList.remove('hidden');
+          tabEl.classList.remove('tab-inactive');
+          tabEl.classList.add('tab-active');
+        } else {
+          viewEl.classList.add('hidden');
+          tabEl.classList.remove('tab-active');
+          tabEl.classList.add('tab-inactive');
+        }
+      });
+    }
+
+    // Modo Pantalla Completa
+    function toggleFullScreen() {
+      const btnText = document.getElementById('fullscreenText');
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+          btnText.textContent = 'Salir Pantalla Completa';
+        }).catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().then(() => {
+            btnText.textContent = 'Pantalla Completa';
+          }).catch(() => {});
+        }
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      const btnText = document.getElementById('fullscreenText');
+      if (!document.fullscreenElement) {
+        btnText.textContent = 'Pantalla Completa';
+      }
+    });
+
+    // Inicializar al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      applyFilters();
+    });
+  </script>
+</body>
+</html>
